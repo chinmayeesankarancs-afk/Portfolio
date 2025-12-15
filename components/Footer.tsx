@@ -31,7 +31,7 @@ export default function Footer() {
 
           {/* Resume */}
           <a
-            href="/resume.pdf"
+            href="/Chinmayee_Sankaran_Resume_Draft.pdf"
             target="_blank"
             className="text-gray-400 hover:text-purple-400 transition"
             aria-label="Resume"
