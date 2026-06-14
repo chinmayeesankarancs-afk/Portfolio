@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "../components/Footer";
 import BackToTop from "../components/BackToTop";
+import BackgroundEffects from "../components/BackgroundEffects";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,10 +31,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        {children}
-        <Footer />
-        <BackToTop />
+        {/* Fixed behind everything — zIndex 0 */}
+        <BackgroundEffects />
+        {/* All page content sits above the background — zIndex 1 */}
+        <div className="relative" style={{ zIndex: 1 }}>
+          <Navbar />
+          {children}
+          <Footer />
+          <BackToTop />
+        </div>
       </body>
     </html>
   );
