@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 html {
-  scroll-behavior: smooth ;
+  scroll-behavior: smooth;
 }
+
 :root {
   --background: #020617;
   --foreground: #ededed;
@@ -16,29 +17,34 @@ html {
 }
 
 body {
-  /* transparent so BackgroundEffects gradient shows through */
   background: transparent;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  /* ensure the fixed background fills the viewport */
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Cyber grid: very subtle dark-blue lines (Layer 2) */
-.cyber-grid {
-  background-image:
-    linear-gradient(rgba(34,211,238,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34,211,238,0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
+.font-mono {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
 }
 
-/* Scanlines: faint repeating horizontal bands for binary/data ambience (Layer 5) */
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+
+/* Scanlines: very faint horizontal bands — kept for atmosphere */
 .scanlines {
   background: repeating-linear-gradient(
     0deg,
     transparent,
     transparent 3px,
-    rgba(0,200,255,0.015) 3px,
-    rgba(0,200,255,0.015) 4px
+    rgba(0,200,255,0.012) 3px,
+    rgba(0,200,255,0.012) 4px
   );
+}
+
+/* Compact section spacing */
+section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }

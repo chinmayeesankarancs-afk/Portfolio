@@ -1,4 +1,3 @@
-import Navbar from "../components/Navbar";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -34,8 +33,7 @@ export default function RootLayout({
         {/* Fixed behind everything — zIndex 0 */}
         <BackgroundEffects />
         {/* All page content sits above the background — zIndex 1 */}
-        <div className="relative" style={{ zIndex: 1 }}>
-          <Navbar />
+        <div className="relative flex flex-col" style={{ zIndex: 1 }}>
           {children}
           <Footer />
           <BackToTop />
